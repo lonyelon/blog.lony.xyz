@@ -1,0 +1,23 @@
+<feed>
+	<link href="https://blog.lony.xyz/es/rss.xml" rel="self" type="application/atom+xml"/>
+	<link href="https://blog.lony.xyz/" rel="alternate" type="text/html"/>
+	<updated>2024-04-15T00:00:00+00:00</updated>
+	<id>https://blog.lony.xyz/es/rss.xml</id>
+	<title type="html">Blog de Sergio</title>
+	<subtitle>Hablo un poco de todo.</subtitle>
+	<entry>
+		<title type="html">CONTENIDO MOVIDO A NUEVO LINK</title>
+		<link href="https://blog.lony.xyz/es/rss.xml" rel="alternate" type="text/html" title="CONTENIDO MOVIDO A NUEVO LINK"/>
+		<published>2024-02-29T21:00:00+00:00</published>
+		<id>https://blog.lony.xyz/p/lagrange/</id>
+		<content type="html" xml:base="https://blog.lony.xyz/es/rss.xml">
+			He movido el contenido de este feed a <a href='https://blog.lony.xyz/es/rss.xml'>https://blog.lony.xyz/es/rss.xml</a>. NO HABRÁ MÁS PUBLICACIONES EN ESTE.
+		</content>
+		<author>
+			<name>Sergio Miguéns Iglesias</name>
+		</author>
+		<summary type="html">
+			He movido el contenido de este feed a <a href='https://blog.lony.xyz/es/rss.xml'>https://blog.lony.xyz/es/rss.xml</a>. NO HABRÁ MÁS PUBLICACIONES EN ESTE.
+		</summary>
+	</entry>
+</feed>

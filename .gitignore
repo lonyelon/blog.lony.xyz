@@ -1,0 +1,9 @@
+_site/
+vendor/
+.bundle/
+blog/*.md
+blog/*.html
+blog/_posts/
+blog/_bibliography/
+blog/img/
+blog/js/
