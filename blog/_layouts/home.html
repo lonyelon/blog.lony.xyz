@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<main>
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {% if site.paginate %}
+    {% assign posts = paginator.posts %}
+  {% else %}
+    {% assign posts = site.posts %}
+  {% endif %}
+
+  {%- if posts.size > 0 -%}
+    {%- if page.list_title -%}
+      <h2 class="post-list-heading">{{ page.list_title }}</h2>
+    {%- endif -%}
+    <ul id="art-list">
+      {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
+        {%- for post in posts -%}
+          {% if post.language == page.language %}
+            <li>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+              <div id="title">
+                {% if post.tags.size > 0 %}
+                <pre id="post-tags">:{{ post.tags | sort | join: ": :" }}:</pre>
+                <div></div>
+                {% endif %}
+                <div></div>
+                <div></div>
+                <div></div>
+                <h1> {{ post.title | escape }} </h1>
+                <div></div>
+                <pre class="post-meta">
+                  {{ post.date | date: date_format }}
+                </pre>
+              </div>
+              <hr>
+              {%- if site.show_excerpts -%}
+                {{ post.excerpt }}
+              {%- endif -%}
+            </a>
+          </li>
+        {% endif %}
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</main>

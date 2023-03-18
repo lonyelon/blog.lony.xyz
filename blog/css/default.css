@@ -1,0 +1,269 @@
+@import "highlight-native.css";
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+
+  color: #282828;
+  background-color: #fbf1c7;
+
+  font-family: Georgia;
+  font-size: 1.2em;
+}
+
+header, footer {
+  color: #fbf1c7;
+  background-color: #282828;
+}
+
+header h1 {
+  padding-top: 1em;
+  text-align: center;
+}
+
+footer {
+  padding: 2em 0 2em 0;
+  text-align: center;
+}
+
+#page-list {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#page-list li {
+  display: inline-block;
+}
+
+#page-list li a {
+  padding: 1em 1em;
+  text-decoration: none;
+
+  color: #fbf1c7;
+}
+
+#page-list li a:hover {
+  background-color: #1d2021;
+  text-decoration: underline;
+}
+
+main {
+  line-height: 1.3;
+  max-width: 70ch;
+  margin: 4em auto 4em auto;
+}
+
+#art-list {
+  padding: 0;
+  list-style: none;
+}
+
+#art-list li {
+  margin-top: 5ch;
+  cursor: pointer;
+}
+
+#art-list li a {
+  color: #3c3836;
+
+  text-decoration: none;
+}
+
+#art-list hr {
+  height: 2px;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: #3c3836;
+  color: #3c3836;
+  
+  border-style: solid;
+}
+
+#art-list a #title {
+  margin-top: 100ch;
+  display: grid;
+  grid-template-columns: 0ch auto 2ch 20ch;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  transition: 0.2s;
+}
+
+#art-list #post-tags {
+  margin: 0;
+  color: #504945;
+}
+
+#art-list a h1 {
+  margin: 0;
+  padding: 0;
+
+  font-size: 28px;
+
+  transition: 0.2s;
+}
+
+#art-list a:hover #title {
+  grid-template-columns: 2ch auto 0ch 20ch;
+}
+
+#art-list .post-meta {
+  text-align: right;
+  margin: 0;
+}
+
+#art-list p {
+  margin: 0;
+  padding-top: 1ch;
+}
+
+p {
+  text-indent: 2ch;
+  text-align: justify;
+}
+
+p strong {
+  background-color: #d5c4a1;
+}
+
+#post-title {
+  margin-bottom: 4ch;
+}
+
+#post-title h1 {
+  margin-bottom: 0;
+}
+
+#post-title pre {
+  margin-top: 0;
+}
+
+main h2 {
+  text-decoration: underline;
+}
+
+main ul li {
+  text-align: justify;
+
+}
+
+main figure {
+  display: block;
+  max-width: 90% !important;
+  margin: 6ch auto 6ch auto;
+  text-align:center;
+}
+
+main figure p {
+  display: block;
+  max-width: 90% !important;
+  margin: 6ch auto 6ch auto;
+  text-align:center;
+}
+
+figure * {
+  margin: 0;
+  width: fill;
+}
+
+main figure code {
+  display: block;
+  width: fill;
+  padding: 3ch;
+  text-align: left;
+  border-radius: 1ch;
+}
+
+main figure img {
+  margin-bottom: 1ch;
+}
+
+main figure figcaption {
+  max-width: 70%;
+  margin: 0 auto 0 auto;
+}
+
+main input {
+  background-color: #d5c4a1;
+  color: #282828;
+  border-color: #282828;
+  border-radius: 0;
+  margin: 0.5em;
+}
+
+main input:hover {
+  background-color: #bdae93;
+  cursor: pointer;
+}
+
+canvas {
+  border: 3px dashed #212121;
+  margin: 0.5em;
+}
+
+main a {
+  color: #689d6a;
+}
+
+main ul {
+  list-style: square;
+}
+
+main blockquote {
+  padding-top: 0.001em;
+  padding-bottom: 0.001em;
+  padding-right: 1em;
+  padding-left: 1em;
+  background-color: #ebdbb2;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, td, th {
+  border: 1px solid;
+}
+
+.MathJax {
+  font-size: 2em;
+}
+
+#pre-footer {
+  display: none;
+  color: #ebdbb2;
+  background-color: #458588;
+  padding: 2em;
+  max-width: 70ch;
+}
+
+#pre-footer-content {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  main {
+    line-height: 1.3;
+    width: 90%;
+    max-width: 90%;
+    margin: 4em auto 4em auto;
+  }
+
+  #pre-footer {
+    max-width: 90%;
+  }
+}
+
+.bibliography {
+  list-style-type: none;
+  padding: 0;
+}

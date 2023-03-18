@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<main>
+  <div id="post-title">
+    <h1> {{ page.title | escape }} </h1>
+    {% if page.tags.size > 0 %}
+      <pre style="color: #504945;font-size: medium">:{{ page.tags | sort | join: ": :" }}:</pre>
+    {% endif %}
+  </div>
+
+  {{ content }}
+</main>
+
+<div id="pre-footer">
+  <div></div>
+  <div id="pre-footer-content">
+    <h1>¿Le ha gustado el post?</h1>
+    <p>
+      La escritura de estos textos me lleva horas de investigación y redacción, por lo que agradezco cualquier tipo de ayuda.
+    </p>
+    <p>
+      La contribución monetaria (através de los medios listados en mi página de contacto) me ayuda a pagar los costes de mantenimiento de esta web, mientras que correcciones a mis <i>posts</i> y proposición de temas evitan que difunda (sin querer) datos falsos. Animo siempre a corregir mis <i>posts</i> precisamente por ese motivo.
+    </p>
+  </div>
+  <div></div>
+</div>
