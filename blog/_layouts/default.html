@@ -1,12 +1,12 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Blog de Sergio</title>
+    <title>Blog de Sergio (sergio.sh)</title>
     <link rel="stylesheet" href="/css/default.css">
   </head>
 
   <body>
-    <header>
+    <header class="unprintable">
       {% if page.language == "es" %} 
         <h1>Blog de Sergio</h1>
       {% elsif page.language == "en" %} 
@@ -26,24 +26,29 @@
               {% endif %}
             {% endif %}
           {% endfor %}
+          {% if page.language == "es" %} 
+            <li><a href="https://sergio.sh">Más</a></li>
+          {% elsif page.language == "en" %} 
+            <li><a href="https://sergio.sh">More</a></li>
+          {% endif %}
         </ul>
       </nav>
     </header>
-      {{ content }}
+    {{ content }}
     <footer>
-      <a href="/{{page.language}}/rss.xml"><img src="/img/rss.svg" width="30em"></a>
+      <a class="unprintable" href="/{{page.language}}/rss.xml"><img src="/img/rss.svg" width="30em"></a>
       <br><br>
       Copyright 2024, Sergio Miguéns Iglesias
     </footer>
     {% if page.math == true %}
       <script>
         MathJax = {
-        tex: {
-          tags: 'ams'
-        }
-      };
+          tex: {
+            tags: 'ams'
+          }
+        };
       </script>
-      <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     {% endif %}
   </body>
 </html>

@@ -5,27 +5,19 @@ html {
   margin: 0;
 }
 
-@font-face {
-  font-family: "my-font";
-  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunrm.otf');
-}
-
 body {
-  padding: 0;
   margin: 0;
 
   color: #282828;
   background-color: #fbf1c7;
 
-  font-family: "my-font";
+  font-family: Georgia;
   font-size: 1.2em;
 }
 
 header, footer {
   color: #fbf1c7;
-  /* background: linear-gradient(60deg, #1d2021, #282828 40%, #3c3836); */
-  background: #282828;
-  box-shadow: #28282855 0 5px 20px;
+  background-color: #282828;
 }
 
 header h1 {
@@ -64,7 +56,7 @@ footer {
 
 main {
   line-height: 1.3;
-  max-width: 50em;
+  max-width: 70ch;
   margin: 4em auto 4em auto;
 }
 
@@ -99,15 +91,11 @@ main {
 #art-list a #title {
   margin-top: 100ch;
   display: grid;
-  grid-template-columns: 0 auto 1.5em 14em;
+  grid-template-columns: 0ch auto 2ch 20ch;
   padding: 0;
   margin: 0;
   text-align: left;
   transition: 0.2s;
-}
-
-#art-list a:hover #title {
-  grid-template-columns: 1.5em auto 0em 14em;
 }
 
 #art-list #post-tags {
@@ -122,6 +110,10 @@ main {
   font-size: 28px;
 
   transition: 0.2s;
+}
+
+#art-list a:hover #title {
+  grid-template-columns: 2ch auto 0ch 20ch;
 }
 
 #art-list .post-meta {
@@ -181,6 +173,23 @@ main figure p {
 figure * {
   margin: 0;
   width: fill;
+}
+
+main figure table {
+  width: fill;
+  padding: 3ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main figure table th {
+  color: #ebdbb2;
+  border-color: #282828;
+  background-color: #282828;
+}
+
+main figure table * {
+  padding: 0.5ch 1ch 0.5ch 1ch;
 }
 
 main figure code {

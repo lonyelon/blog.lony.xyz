@@ -6,7 +6,7 @@ layout: default
   <div id="post-title">
     <h1> {{ page.title | escape }} </h1>
     {% if page.tags.size > 0 %}
-      <pre style="color: #504945;font-size: medium">:{{ page.tags | sort | join: ": :" }}:</pre>
+      <pre style="color: #504945;font-size: medium">:{{ page.tags | join: ": :" }}:</pre>
     {% endif %}
   </div>
 
