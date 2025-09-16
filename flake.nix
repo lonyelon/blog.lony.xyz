@@ -1,35 +1,25 @@
 {
-  description = "Build and serve my blog";
+  description = "Build or serve my blog";
 
-  # Ruby 2.7 is available only in NixOS 23.11.
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/23.11";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   
   outputs = inputs: with inputs; let
 
     # List of ruby gems required.
     gem_list = {
-      jekyll = "3.9.0";
-      kramdown-parser-gfm = "1.1.0";
-      logger = "1.5.1";
+      jekyll = "4.4.0";
+      logger = "1.7.0";
     };
 
     # List of plugins to use in Jenkins.
     plugin_list = {
       jekyll-figure = "0.2.0";
-      jekyll-scholar = "5.16.0";
+      jekyll-scholar = "7.1.3";
     };
 
     system = "x86_64-linux";
 
-    # Seems like these packages are vulnerable, but since we are only using
-    # them once to build, I think it is OK.
-    pkgs = (import nixpkgs {
-      inherit system;
-      config.permittedInsecurePackages = [
-        "ruby-2.7.8"
-        "openssl-1.1.1w"
-      ];
-    });
+    pkgs = (import nixpkgs { inherit system; });
 
     generate_gemfile = let
       gems = builtins.concatStringsSep "\n" (pkgs.lib.attrsets.mapAttrsToList (name: version:
@@ -41,7 +31,6 @@
       ) plugin_list);
     in ''
       source "https://rubygems.org"
-      gem "github-pages", "~> 224", group: :jekyll_plugins
       ${gems}
       group :jekyll_plugins do
       ${plugins}
@@ -50,7 +39,7 @@
 
     env = pkgs.bundlerEnv {
       name = "blog";
-      ruby = pkgs.ruby_2_7;
+      ruby = pkgs.ruby;
       gemdir = ./.;
     };
 
@@ -59,7 +48,6 @@
       exec = pkgs.writeShellApplication {
         inherit name text;
         runtimeInputs = with pkgs; [
-          #gnumake
           bundler
         ] ++ add_deps;
       };
