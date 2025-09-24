@@ -27,17 +27,17 @@ layout: default
               <a class="post-link" href="{{ post.url | relative_url }}">
               <div id="title">
                 {% if post.tags.size > 0 %}
-                <pre id="post-tags">:{{ post.tags | sort | join: ": :" }}:</pre>
+                <pre id="post-tags">{{ post.tags | sort | join: ", " }}</pre>
                 <div></div>
                 {% endif %}
                 <div></div>
                 <div></div>
                 <div></div>
-                <h1> {{ post.title | escape }} </h1>
+                <h1>»{{ post.title | escape }}</h1>
                 <div></div>
-                <pre class="post-meta">
+                <p class="post-meta">
                   {{ post.date | date: date_format }}
-                </pre>
+                </p>
               </div>
               <hr>
               {%- if site.show_excerpts -%}

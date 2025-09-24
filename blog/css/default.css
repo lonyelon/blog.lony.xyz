@@ -1,5 +1,13 @@
 @import "highlight-native.css";
 
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/font/ebgaramond.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 html {
   padding: 0;
   margin: 0;
@@ -11,18 +19,45 @@ body {
   color: #282828;
   background-color: #fbf1c7;
 
-  font-family: Georgia;
-  font-size: 1.2em;
-}
-
-header, footer {
-  color: #fbf1c7;
-  background-color: #282828;
+  font-family: "EB Garamond";
+  font-size: 1.2rem;
 }
 
 header h1 {
-  padding-top: 1em;
+  padding-top: 0;
+  margin-top: 1em;
   text-align: center;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: 4rem;
+}
+
+header::before,
+header::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.75;
+}
+
+header::before {
+  top: 0;
+  left: 50%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #d3869b, #ebdbb2);
+  transform: translate(-450px, -350px);
+}
+
+header::after {
+  top: 0;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #83a598, #ebdbb2);
+  transform: translate(-50px, -50px);
 }
 
 footer {
@@ -30,12 +65,16 @@ footer {
   text-align: center;
 }
 
+nav ul {
+  margin: 0;
+}
+
 #page-list {
   list-style: none;
   text-align: center;
   padding: 0;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 #page-list li {
@@ -43,20 +82,18 @@ footer {
 }
 
 #page-list li a {
-  padding: 1em 1em;
+  margin: 0 1em;
   text-decoration: none;
-
-  color: #fbf1c7;
+  color: #1d2021;
 }
 
 #page-list li a:hover {
-  background-color: #1d2021;
   text-decoration: underline;
 }
 
 main {
   line-height: 1.3;
-  max-width: 70ch;
+  max-width: 50rem;
   margin: 4em auto 4em auto;
 }
 
@@ -91,7 +128,7 @@ main {
 #art-list a #title {
   margin-top: 100ch;
   display: grid;
-  grid-template-columns: 0ch auto 2ch 20ch;
+  grid-template-columns: 0ch auto 2ch 25ch;
   padding: 0;
   margin: 0;
   text-align: left;
@@ -99,6 +136,7 @@ main {
 }
 
 #art-list #post-tags {
+  font-size: 0.8rem;
   margin: 0;
   color: #504945;
 }
@@ -113,11 +151,12 @@ main {
 }
 
 #art-list a:hover #title {
-  grid-template-columns: 2ch auto 0ch 20ch;
+  grid-template-columns: 1ch auto 0ch 25ch;
 }
 
 #art-list .post-meta {
   text-align: right;
+  font-size: 0.85em;
   margin: 0;
 }
 
@@ -224,11 +263,11 @@ main input:hover {
 
 canvas {
   border: 3px dashed #212121;
-  margin: 0.5em;
+  margin: auto;
 }
 
 main a {
-  color: #689d6a;
+  color: #458588;
 }
 
 main ul {
@@ -252,7 +291,7 @@ table, td, th {
 }
 
 .MathJax {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 #pre-footer {
@@ -267,20 +306,122 @@ table, td, th {
   text-align: center;
 }
 
-@media (max-width: 900px) {
+.bibliography {
+  list-style-type: none;
+  padding: 0;
+}
+
+@media (pointer:none), (pointer:coarse) {
   main {
     line-height: 1.3;
-    width: 90%;
-    max-width: 90%;
-    margin: 4em auto 4em auto;
+    width: 92.5%;
+    max-width: 92.5%;
+    margin: 1em auto 1em auto;
   }
 
   #pre-footer {
     max-width: 90%;
   }
-}
 
-.bibliography {
-  list-style-type: none;
-  padding: 0;
+  header::before {
+    top: 0 !important;
+    left: 50% !important;
+    width: 1000px !important;
+    height: 1000px !important;
+    background: radial-gradient(circle, #d3869b, #ebdbb2) !important;
+    transform: translate(-700px, -350px) !important;
+  }
+
+  header::after {
+    top: 0 !important;
+    left: 50% !important;
+    width: 600px !important;
+    height: 600px !important;
+    background: radial-gradient(circle, #83a598, #ebdbb2) !important;
+    transform: translate(-150px, 100px) !important;
+  }
+
+  header h1 {
+    font-size: 6em !important;
+  }
+
+  #art-list a h1 {
+    font-size: 3em !important;
+  }
+
+  h1 {
+    font-size: 4em !important;
+  }
+
+  h2 {
+    font-size: 2.5em !important;
+  }
+
+  h3 {
+    font-size: 1.5em !important;
+  }
+
+  #page-list li {
+    font-size: 3em !important;
+  }
+
+  #page-list li a {
+    padding: 0.5em !important;
+  }
+
+  #page-list li a:hover {
+    text-decoration: underline;
+  }
+
+  #art-list li {
+    margin-bottom: 15ch !important;
+  }
+  
+  #art-list a #title {
+    grid-template-columns: 100% !important;
+    grid-template-rows: auto auto auto auto !important;
+  }
+
+  main figure {
+    font-size: 2.0em;
+  }
+
+  main figure input {
+    width: 95% !important;
+    font-size: 2rem !important;
+    overflow-x: auto !important;
+  }
+
+  main figure input[type="checkbox"] {
+    width: 1.5em !important;
+    height: 1.5em !important;
+  }
+
+  main figure figcaption {
+    font-size: 1rem !important;
+  }
+
+  main figure canvas {
+    width: 100%;
+  }
+
+  main figure img {
+    width: 100%;
+  }
+
+  #rssimg {
+    width: 7.5rem;
+  }
+
+  .MathJax {
+    font-size: 2.5em !important;
+  }
+
+  mjx-container[display="true"] {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+  }
 }
